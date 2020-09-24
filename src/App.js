@@ -4,17 +4,15 @@ import React from 'react'
 import store from './store'
 import { Provider } from 'react-redux'
 
-class App extends React.Component {
-	render() {
-		return (
-			<Provider store={store}>
-				<div className="App">
-					<h1>React - Redux</h1>
-					<div className="alert">Alerta activada</div>
-				</div>
-			</Provider>
-		)
-	}
+function App() {
+	return (
+		<Provider store={store}>
+			<div className="App">
+				<h1>React - Redux</h1>
+				<div className="alert">Alerta activada</div>
+			</div>
+		</Provider>
+	)
 }
 
 export default App

@@ -1,9 +1,6 @@
-import { combineReducers } from 'redux'
+import React from 'react'
+import ReactDom from 'react-dom'
+import App from './App'
 
-//Reducers
-import alertReducers from './reducers/alertReducers'
 
-
-export default combineReducers({
-	alert: alertReducers
-})
+ReactDom.render(<App />, document.getElementById("root"))
