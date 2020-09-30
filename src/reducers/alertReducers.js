@@ -1,6 +1,6 @@
 const initalProps = {
 	showAlert: false,
-	textAlert: ""
+	textAlert: "Martin"
 }
 
 export default function (state = initalProps, action) {
@@ -21,3 +21,7 @@ export default function (state = initalProps, action) {
 			return state
 	}
 }
+
+//Patron Redux.
+
+//Los reducers: Son una funcion que recibe solo dos parametros (oldState, action) y siempre retorna un nuevo estado.
