@@ -1,5 +1,3 @@
-import { Switch } from "react-router-dom"
-
 const initialProps = {
 	showImage: false,
 	textImage: "Futbol por default"
