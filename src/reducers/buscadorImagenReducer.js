@@ -1,16 +1,30 @@
+
 const initialProps = {
-	showImage: false,
-	textImage: "Futbol por default"
+	isFetching: false,
+	image: null,
+	error: null
 }
 
 export default function (state = initialProps, action) {
 
 	switch (action.type) {
-		case "SET_IMAGEN":
+		case "fetch_search_images_request":
 			return {
 				...state,
-				showImage: action.payload
+				isFetching: true
 			}
+			case "fetch_search_images_success":
+				return {
+					...state,
+					isFetching: false,
+					image: action.payload
+				}
+			case "fetch_search_images_failure":
+					return {
+						...state,
+						isFetching: false,
+						error: action.error
+					}
 
 		default:
 			return state;
