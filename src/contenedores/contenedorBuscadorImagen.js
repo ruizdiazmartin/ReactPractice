@@ -3,8 +3,6 @@ import { fetchSearchImages } from '../actions/buscadorImagenAction';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Buscador from '../componentes/Buscador';
-import Imagen from '../componentes/Imagen';
-import Paginacion from '../componentes/Paginacion';
 import Resultado from '../componentes/Resultado';
 
 
