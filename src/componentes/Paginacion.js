@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Paginacion = (props) => {
+const Paginacion = ({page, paginaAnterior, paginaSiguiente}) => {
 	return (
 		<div className="py_3">
-			<button onClick={props.paginaAnterior} type="button" className="btn btn-info mr-1">Anterior</button>
-			<button onClick={props.paginaSiguiente} type="button" className="btn btn-info">Siguiente</button>
+			{page === 1 ? null : <button onClick={paginaAnterior} type="button" className="btn btn-info mr-1">Anterior</button>}
+			<button onClick={paginaSiguiente} type="button" className="btn btn-info">Siguiente</button>
 		</div>
 	)
 }

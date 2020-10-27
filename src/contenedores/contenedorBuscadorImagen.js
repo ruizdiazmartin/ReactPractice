@@ -16,45 +16,16 @@ class contenedorBuscadorImagen extends React.Component {
 	}
 
 	paginaAnterior = () => {
-		//Leer el state actual
-		let pagina = this.state.pagina
-
-		//Leer si la pagina es 1 no ir hacia atras
-		if (pagina === 1) return null
-
-		//Resto uno a la pagina actual
-		pagina--
-
-		//agregar el cambio al state
-		this.setState({
-			pagina
-		}, () => {
-			this.consultarApi()
-			this.scroll();
-		})
-
-		//console.log(pagina)
+		this.props.fetchSearchImages(this.props.imagesReducers.search , this.props.imagesReducers.page - 1);
 	}
 
 	paginaSiguiente = () => {
-		//Leer el state actual
-		let pagina = this.state.pagina
-
-		//Sumar uno a la pagina actual
-		pagina++
-
-		//agregar el cambio al state
-		this.setState({
-			pagina
-		}, () => {
-			this.consultarApi()
-			this.scroll();
-		})
+		this.props.fetchSearchImages(this.props.imagesReducers.search , this.props.imagesReducers.page + 1);
 	}
 
 
 	datosBusqueda = (busqueda) => {
-		this.props.fetchSearchImages(busqueda);
+		this.props.fetchSearchImages(busqueda, 1);
 	}
 
 	render() {
@@ -68,7 +39,7 @@ class contenedorBuscadorImagen extends React.Component {
 				</div>
 				<div className="text-center">
 					<Resultado
-						imagenes={this.props.imagesReducers}
+						imagesReducers={this.props.imagesReducers}
 						paginaAnterior={this.paginaAnterior}
 						paginaSiguiente={this.paginaSiguiente}
 					/>
