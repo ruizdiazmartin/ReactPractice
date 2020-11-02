@@ -6,12 +6,13 @@ const fetchSearchImagesRequest = () => {
 	}
 }
 
-const fetchSearchImagesSuccess = (payload, page, search) => {
+const fetchSearchImagesSuccess = (payload, page, search, totalImages) => {
 	return {
 		type: "fetch_search_images_success",
 		payload,
 		page,
-		search
+		search,
+		totalImages
 	}
 }
 
@@ -32,11 +33,10 @@ export const fetchSearchImages = (value, page) => {
 
 			let result1 = await axios.get(url);
 
-			dispatch(fetchSearchImagesSuccess(result1.data.hits, page, value));
+			dispatch(fetchSearchImagesSuccess(result1.data.hits, page, value, result1.data.total));
 
 		} catch (error) {
 			dispatch(fetchSearchImagesFailure(error));
 		}
 	}
-
 }

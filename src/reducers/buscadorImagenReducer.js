@@ -4,6 +4,7 @@ const initialProps = {
 	error: null,
 	page: null,
 	search: null,
+	totalImages: null
 
 }
 
@@ -22,6 +23,7 @@ export default function (state = initialProps, action) {
 				images: action.payload,
 				page: action.page,
 				search: action.search,
+				totalImages: action.totalImages
 			}
 		case "fetch_search_images_failure":
 			return {

@@ -14,11 +14,11 @@ class contenedorBuscadorImagen extends React.Component {
 	}
 
 	paginaAnterior = () => {
-		this.props.fetchSearchImages(this.props.imagesReducers.search , this.props.imagesReducers.page - 1);
+		this.props.fetchSearchImages(this.props.imagesReducers.search, this.props.imagesReducers.page - 1);
 	}
 
 	paginaSiguiente = () => {
-		this.props.fetchSearchImages(this.props.imagesReducers.search , this.props.imagesReducers.page + 1);
+		this.props.fetchSearchImages(this.props.imagesReducers.search, this.props.imagesReducers.page + 1);
 	}
 
 
@@ -40,6 +40,7 @@ class contenedorBuscadorImagen extends React.Component {
 						imagesReducers={this.props.imagesReducers}
 						paginaAnterior={this.paginaAnterior}
 						paginaSiguiente={this.paginaSiguiente}
+						totalImages={this.props.imagesReducers}
 					/>
 				</div>
 			</div>
