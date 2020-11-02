@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 
 const fetchSearchImagesRequest = () => {
@@ -7,12 +6,13 @@ const fetchSearchImagesRequest = () => {
 	}
 }
 
-const fetchSearchImagesSuccess = (payload, page, search) => {
+const fetchSearchImagesSuccess = (payload, page, search, totalImages) => {
 	return {
 		type: "fetch_search_images_success",
 		payload,
 		page,
-		search
+		search,
+		totalImages
 	}
 }
 
@@ -27,17 +27,16 @@ export const fetchSearchImages = (value, page) => {
 	return async dispatch => {
 		try {
 			dispatch(fetchSearchImagesRequest());
-			
-		 const url = `https://pixabay.com/api/?key=1732750-d45b5378879d1e877cd1d35a6&q=${value}
+
+			const url = `https://pixabay.com/api/?key=1732750-d45b5378879d1e877cd1d35a6&q=${value}
 		 	&per_page=20&page=${page}`;
-	
-		 let result1 = await axios.get(url);
-		
-		dispatch(fetchSearchImagesSuccess(result1.data.hits, page, value));
-	
+
+			let result1 = await axios.get(url);
+
+			dispatch(fetchSearchImagesSuccess(result1.data.hits, page, value, result1.data.total));
+
 		} catch (error) {
 			dispatch(fetchSearchImagesFailure(error));
-		  }
+		}
 	}
-
 }
