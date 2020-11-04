@@ -24,6 +24,7 @@ const fetchSearchImagesFailure = error => {
 }
 
 export const fetchSearchImages = (value, page) => {
+
 	return async dispatch => {
 		try {
 			dispatch(fetchSearchImagesRequest());
