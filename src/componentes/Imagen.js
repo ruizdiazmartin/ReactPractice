@@ -12,6 +12,7 @@ const Imagen = (props) => {
 					<p className="card-text">{likes} Me gusta </p>
 					<p className="card-text">{views} Vistas </p>
 					<a href={largeImageURL} target="_blank" className="btn btn-primary btn-block">Ver Imagen</a>
+					<input type="checkbox" value="option1" checked={false} />
 				</div>}
 			</div>
 		</div>

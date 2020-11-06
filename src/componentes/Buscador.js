@@ -15,14 +15,12 @@ class Buscador extends Component {
 		//Lo enviamos al componente principal
 		this.props.datosBusqueda(termino)
 
-
 	}
 
 	render() {
 		return (
 			<form onSubmit={this.obtenerDatos}>
 				<div className="row">
-					<span class="sr-only">Loading...</span>
 					<div className="form-group col-md-8">
 						<input ref={this.busquedaRef} type="text" className="form-control form-control-lg" placeholder="Busca tu imagen. Ejemplo: Futbol" />
 					</div>
