@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Imagen from './Imagen';
 import Paginacion from './Paginacion'
 

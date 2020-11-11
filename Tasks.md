@@ -11,6 +11,10 @@ Siempre que sean 20 por pagina, eso no es modificable.
 
 -Nombre variables en ingles y legibles a la funcionalidad que le corresponde.
 
--Luego de meter 3 o mas caracteres, que haga la busqueda automaticamente, y eliminar el boton.
-
 -Agregar un boton "x" que elimine lo que tipee en el texbox de busqueda, y que limpie el reducer (seria la busqueda anterior).
+
+-El mensaje de cargando, que no sea un mensaje, sino un icono de material ui, o de boostrap.
+
+- Que el alto de los items, sean fijo e igual para todos, definilo vos.
+
+-Eliminar todas las variables que no se usan.
