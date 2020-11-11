@@ -14,7 +14,6 @@ export default function Resultado({ imagesReducers, paginaAnterior, paginaSiguie
 					<Imagen
 						key={imagen.id}
 						imagen={imagen}
-						imagesReducers={imagesReducers}
 					/>
 				))}
 			</div>
@@ -22,7 +21,7 @@ export default function Resultado({ imagesReducers, paginaAnterior, paginaSiguie
 				page={imagesReducers.page}
 				paginaAnterior={paginaAnterior}
 				paginaSiguiente={paginaSiguiente}
-				totalImages={imagesReducers.totalImages}
+				lastPage={imagesReducers.lastPage}
 			/>
 		</div>
 	)
