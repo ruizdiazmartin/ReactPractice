@@ -17,6 +17,7 @@ class Buscador extends Component {
 
 	}
 
+
 	render() {
 		return (
 			<form onSubmit={this.obtenerDatos}>
