@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const fetchSearchImagesRequest = () => {
 	return {
-		type: "fetch_search_images_request",
+		type: "fetch_search_images_request"
 	}
 }
 
@@ -24,6 +24,7 @@ const fetchSearchImagesFailure = error => {
 }
 
 export const fetchSearchImages = (value, page) => {
+
 	return async dispatch => {
 		try {
 			dispatch(fetchSearchImagesRequest());
@@ -33,7 +34,12 @@ export const fetchSearchImages = (value, page) => {
 
 			let result1 = await axios.get(url);
 
-			dispatch(fetchSearchImagesSuccess(result1.data.hits, page, value, result1.data.total));
+			if (result1.data.total !== 0) {
+				dispatch(fetchSearchImagesSuccess(result1.data.hits, page, value, result1.data.total));
+
+			} else {
+				alert("No se obtuvieron resultados para la busqueda solicitada")
+			}
 
 		} catch (error) {
 			dispatch(fetchSearchImagesFailure(error));

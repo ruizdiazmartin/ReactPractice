@@ -26,6 +26,7 @@ class contenedorBuscadorImagen extends React.Component {
 		this.props.fetchSearchImages(busqueda, 1);
 	}
 
+
 	render() {
 		return (
 			<div className="container">

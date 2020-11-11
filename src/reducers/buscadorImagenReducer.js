@@ -15,6 +15,7 @@ export default function (state = initialProps, action) {
 			return {
 				...state,
 				isFetching: true
+
 			}
 		case "fetch_search_images_success":
 			return {
