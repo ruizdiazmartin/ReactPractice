@@ -22,7 +22,7 @@ class contenedorBuscadorImagen extends React.Component {
 	}
 
 
-	datosBusqueda = (busqueda) => {
+	searchData = (busqueda) => {
 		this.props.fetchSearchImages(busqueda, 1);
 	}
 
@@ -31,9 +31,9 @@ class contenedorBuscadorImagen extends React.Component {
 		return (
 			<div className="container">
 				<div className="jumbotron">
-					<p className="lead text-center">Buscador de Imagenes</p>
+					<p className="lead text-center">Search of Images</p>
 					<Buscador
-						datosBusqueda={this.datosBusqueda}
+						searchData={this.searchData}
 					/>
 				</div>
 				<div className="text-center">

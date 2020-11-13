@@ -32,9 +32,9 @@ export const fetchSearchImages = (value, page) => {
 			const url = `https://pixabay.com/api/?key=1732750-d45b5378879d1e877cd1d35a6&q=${value}
 		 	&per_page=20&page=${page}`;
 
-			let result1 = await axios.get(url);
-			debugger;
-			dispatch(fetchSearchImagesSuccess(result1.data.hits, page, value, result1.data.total));
+			let response = await axios.get(url);
+
+			dispatch(fetchSearchImagesSuccess(response.data.hits, page, value, response.data.total));
 
 		} catch (error) {
 			dispatch(fetchSearchImagesFailure(error));
