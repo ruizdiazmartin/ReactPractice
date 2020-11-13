@@ -37,19 +37,21 @@ class contenedorBuscadorImagen extends React.Component {
 					/>
 				</div>
 				<div className="text-center">
-					{this.props.imagesReducers.isFetching ? 
-						"CARGANDO" 
+					{this.props.imagesReducers.isFetching ?
+						<div class="spinner-border" role="status">
+							<span class="sr-only">Loading...</span>
+						</div>
 						:
 						this.props.imagesReducers.totalImages === 0 ?
-						"NO HAY RESULTADOS PARA ESTA BUSQUEDA, INTENTE CON OTRA"
-						:
-						<Resultado
-							imagesReducers={this.props.imagesReducers}
-							paginaAnterior={this.paginaAnterior}
-							paginaSiguiente={this.paginaSiguiente}
-						/>
+							"NO HAY RESULTADOS PARA ESTA BUSQUEDA, INTENTE CON OTRA"
+							:
+							<Resultado
+								imagesReducers={this.props.imagesReducers}
+								paginaAnterior={this.paginaAnterior}
+								paginaSiguiente={this.paginaSiguiente}
+							/>
 					}
-					
+
 				</div>
 			</div>
 		)
