@@ -9,20 +9,20 @@ import Resultado from '../componentes/Resultado';
 class contenedorBuscadorImagen extends React.Component {
 
 	scroll = () => {
-		const elemento = document.querySelector('.jumbotron')
-		elemento.scrollIntoView('smooth', 'start')
+		const element = document.querySelector('.jumbotron')
+		element.scrollIntoView('smooth', 'start')
 	}
 
-	paginaAnterior = () => {
+	pagePreviu = () => {
 		this.props.fetchSearchImages(this.props.imagesReducers.search, this.props.imagesReducers.page - 1);
 	}
 
-	paginaSiguiente = () => {
+	pageNext = () => {
 		this.props.fetchSearchImages(this.props.imagesReducers.search, this.props.imagesReducers.page + 1);
 	}
 
 
-	datosBusqueda = (busqueda) => {
+	searchData = (busqueda) => {
 		this.props.fetchSearchImages(busqueda, 1);
 	}
 
@@ -31,25 +31,26 @@ class contenedorBuscadorImagen extends React.Component {
 		return (
 			<div className="container">
 				<div className="jumbotron">
-					<p className="lead text-center">Buscador de Imagenes</p>
+					<p className="lead text-center">Search of Images</p>
 					<Buscador
-						datosBusqueda={this.datosBusqueda}
+						searchData={this.searchData}
 					/>
 				</div>
 				<div className="text-center">
-					{this.props.imagesReducers.isFetching ? 
-						"CARGANDO" 
+					{this.props.imagesReducers.isFetching ?
+						<div class="spinner-border" role="status">
+							<span class="sr-only">Loading...</span>
+						</div>
 						:
 						this.props.imagesReducers.totalImages === 0 ?
-						"NO HAY RESULTADOS PARA ESTA BUSQUEDA, INTENTE CON OTRA"
-						:
-						<Resultado
-							imagesReducers={this.props.imagesReducers}
-							paginaAnterior={this.paginaAnterior}
-							paginaSiguiente={this.paginaSiguiente}
-						/>
+							"NO HAY RESULTADOS PARA ESTA BUSQUEDA, INTENTE CON OTRA"
+							:
+							<Resultado
+								imagesReducers={this.props.imagesReducers}
+								pagePreviu={this.pagePreviu}
+								pageNext={this.pageNext}
+							/>
 					}
-					
 				</div>
 			</div>
 		)

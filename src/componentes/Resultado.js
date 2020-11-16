@@ -3,24 +3,24 @@ import Imagen from './Imagen';
 import Paginacion from './Paginacion'
 
 
-export default function Resultado({ imagesReducers, paginaAnterior, paginaSiguiente }) {
+export default function Resultado({ imagesReducers, pagePreviu, pageNext }) {
 
 	if (imagesReducers.images === null) return null;
 
 	return (
 		<div>
 			<div className="col-12 p-5 row">
-				{imagesReducers.images.map(imagen => (
+				{imagesReducers.images.map(image => (
 					<Imagen
-						key={imagen.id}
-						imagen={imagen}
+						key={image.id}
+						image={image}
 					/>
 				))}
 			</div>
 			<Paginacion
 				page={imagesReducers.page}
-				paginaAnterior={paginaAnterior}
-				paginaSiguiente={paginaSiguiente}
+				pagePreviu={pagePreviu}
+				pageNext={pageNext}
 				lastPage={imagesReducers.lastPage}
 			/>
 		</div>
