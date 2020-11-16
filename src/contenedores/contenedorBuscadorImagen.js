@@ -9,15 +9,15 @@ import Resultado from '../componentes/Resultado';
 class contenedorBuscadorImagen extends React.Component {
 
 	scroll = () => {
-		const elemento = document.querySelector('.jumbotron')
-		elemento.scrollIntoView('smooth', 'start')
+		const element = document.querySelector('.jumbotron')
+		element.scrollIntoView('smooth', 'start')
 	}
 
-	paginaAnterior = () => {
+	pagePreviu = () => {
 		this.props.fetchSearchImages(this.props.imagesReducers.search, this.props.imagesReducers.page - 1);
 	}
 
-	paginaSiguiente = () => {
+	pageNext = () => {
 		this.props.fetchSearchImages(this.props.imagesReducers.search, this.props.imagesReducers.page + 1);
 	}
 
@@ -47,11 +47,10 @@ class contenedorBuscadorImagen extends React.Component {
 							:
 							<Resultado
 								imagesReducers={this.props.imagesReducers}
-								paginaAnterior={this.paginaAnterior}
-								paginaSiguiente={this.paginaSiguiente}
+								pagePreviu={this.pagePreviu}
+								pageNext={this.pageNext}
 							/>
 					}
-
 				</div>
 			</div>
 		)
