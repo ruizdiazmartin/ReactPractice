@@ -6,7 +6,7 @@ import Buscador from '../componentes/Buscador';
 import Resultado from '../componentes/Resultado';
 
 
-class contenedorBuscadorImagen extends React.Component {
+class conteinerSearchImage extends React.Component {
 
 	scroll = () => {
 		const element = document.querySelector('.jumbotron')
@@ -68,7 +68,7 @@ function mapDispatchToProps(dispatch) {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(contenedorBuscadorImagen)
+export default connect(mapStateToProps, mapDispatchToProps)(conteinerSearchImage)
 
 
 
