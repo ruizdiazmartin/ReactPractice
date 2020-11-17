@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
-import buscadorImagenReducer from '../reducers/buscadorImagenReducer'
+import searchImageReducer from '../reducers/searchImageReducer'
 
 export default combineReducers({
-	imagesReducers: buscadorImagenReducer
+	imagesReducers: searchImageReducer
 })
 
