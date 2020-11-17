@@ -38,9 +38,7 @@ class contenedorBuscadorImagen extends React.Component {
 				</div>
 				<div className="text-center">
 					{this.props.imagesReducers.isFetching ?
-						<div class="spinner-border" role="status">
-							<span class="sr-only">Loading...</span>
-						</div>
+						<div class="spinner-border"></div>
 						:
 						this.props.imagesReducers.totalImages === 0 ?
 							"NO HAY RESULTADOS PARA ESTA BUSQUEDA, INTENTE CON OTRA"
