@@ -2,7 +2,7 @@ import React from 'react';
 import { fetchSearchImages } from '../actions/searchImageAction';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Buscador from '../componentes/Buscador';
+import Searcher from '../componentes/Searcher';
 import Result from '../componentes/Result';
 
 
@@ -32,7 +32,7 @@ class conteinerSearchImage extends React.Component {
 			<div className="container">
 				<div className="jumbotron">
 					<p className="lead text-center">Search of Images</p>
-					<Buscador
+					<Searcher
 						searchData={this.searchData}
 					/>
 				</div>

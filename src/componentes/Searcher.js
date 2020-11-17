@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 
-class Buscador extends Component {
+class Searcher extends Component {
 
 	searchReference = React.createRef();
 
@@ -33,4 +33,4 @@ class Buscador extends Component {
 	}
 }
 
-export default Buscador
+export default Searcher
