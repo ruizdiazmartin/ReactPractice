@@ -41,7 +41,7 @@ class conteinerSearchImage extends React.Component {
 						<div class="spinner-border"></div>
 						:
 						this.props.imagesReducers.totalImages === 0 ?
-							"NO HAY ResultS PARA ESTA BUSQUEDA, INTENTE CON OTRA"
+							"NO HAY RESULTADOS PARA ESTA BUSQUEDA, INTENTE CON OTRA"
 							:
 							<Result
 								imagesReducers={this.props.imagesReducers}
