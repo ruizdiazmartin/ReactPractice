@@ -1,5 +1,5 @@
 import React from 'react'
-import ContenedorSearcher from './contenedores/conteinerSearchImage'
+import ContenedorSearcher from './containers/conteinerSearchImage'
 import store from './store'
 import { Provider } from 'react-redux'
 
