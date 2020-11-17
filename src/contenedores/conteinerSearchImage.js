@@ -3,7 +3,7 @@ import { fetchSearchImages } from '../actions/searchImageAction';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Buscador from '../componentes/Buscador';
-import Resultado from '../componentes/Resultado';
+import Result from '../componentes/Result';
 
 
 class conteinerSearchImage extends React.Component {
@@ -41,9 +41,9 @@ class conteinerSearchImage extends React.Component {
 						<div class="spinner-border"></div>
 						:
 						this.props.imagesReducers.totalImages === 0 ?
-							"NO HAY RESULTADOS PARA ESTA BUSQUEDA, INTENTE CON OTRA"
+							"NO HAY ResultS PARA ESTA BUSQUEDA, INTENTE CON OTRA"
 							:
-							<Resultado
+							<Result
 								imagesReducers={this.props.imagesReducers}
 								pagePreviu={this.pagePreviu}
 								pageNext={this.pageNext}

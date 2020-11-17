@@ -3,7 +3,7 @@ import Imagen from './Imagen';
 import Pagination from './Pagination'
 
 
-export default function Resultado({ imagesReducers, pagePreviu, pageNext }) {
+export default function Result({ imagesReducers, pagePreviu, pageNext }) {
 
 	if (imagesReducers.images === null) return null;
 
