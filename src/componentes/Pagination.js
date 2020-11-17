@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Paginacion = ({ page, pagePreviu, pageNext, lastPage }) => {
+const Pagination = ({ page, pagePreviu, pageNext, lastPage }) => {
 
 	return (
 		<div className="py_3">
@@ -10,4 +10,4 @@ const Paginacion = ({ page, pagePreviu, pageNext, lastPage }) => {
 	)
 }
 
-export default Paginacion
+export default Pagination

@@ -1,6 +1,6 @@
 import React from 'react';
 import Imagen from './Imagen';
-import Paginacion from './Paginacion'
+import Pagination from './Pagination'
 
 
 export default function Resultado({ imagesReducers, pagePreviu, pageNext }) {
@@ -17,7 +17,7 @@ export default function Resultado({ imagesReducers, pagePreviu, pageNext }) {
 					/>
 				))}
 			</div>
-			<Paginacion
+			<Pagination
 				page={imagesReducers.page}
 				pagePreviu={pagePreviu}
 				pageNext={pageNext}
