@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchSearchImages } from '../actions/buscadorImagenAction';
+import { fetchSearchImages } from '../actions/searchImageAction';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Buscador from '../componentes/Buscador';
