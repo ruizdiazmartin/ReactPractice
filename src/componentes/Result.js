@@ -1,5 +1,5 @@
 import React from 'react';
-import Imagen from './Imagen';
+import Images from './Images';
 import Pagination from './Pagination'
 
 
@@ -11,7 +11,7 @@ export default function Result({ imagesReducers, pagePreviu, pageNext }) {
 		<div>
 			<div className="col-12 p-5 row">
 				{imagesReducers.images.map(image => (
-					<Imagen
+					<Images
 						key={image.id}
 						image={image}
 					/>
