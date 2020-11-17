@@ -2,8 +2,8 @@ import React from 'react';
 import { fetchSearchImages } from '../actions/searchImageAction';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Searcher from '../componentes/Searcher';
-import Result from '../componentes/Result';
+import Searcher from '../components/Searcher';
+import Result from '../components/Result';
 
 
 class conteinerSearchImage extends React.Component {
