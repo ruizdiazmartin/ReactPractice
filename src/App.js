@@ -1,16 +1,20 @@
-import React from 'react'
-import ContenedorBuscador from './contenedores/contenedorBuscadorImagen'
-import store from './store'
-import { Provider } from 'react-redux'
+import React from 'react';
+import store from './store';
+import { createBrowserHistory } from "history";
+import { Provider } from 'react-redux';
+import { RoutesContainer } from './routes';
+import { Router, Redirect, Route, RouteComponentProps, Switch, withRouter } from 'react-router-dom';
 
+const hist = createBrowserHistory();
 
 function App() {
 	return (
 		<Provider store={store}>
-			<ContenedorBuscador />
+			<Router history={hist} >
+			<RoutesContainer />
+			</Router>
 		</Provider>
 	)
 }
-
 
 export default App
