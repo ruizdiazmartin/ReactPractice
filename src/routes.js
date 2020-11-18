@@ -7,19 +7,17 @@ import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 class Routes extends React.Component {
     constructor(props) {
 		super(props);
+		debugger;
       }
 	render() {
+		var val = this.props;
+		debugger
 		return (
 				<Switch>
 				<Route
-					pathname="/buscador"
+					path="/"
 					component={ContenedorBuscador}
 					/>
-				<Redirect
-					exact
-					from="/"
-					to="/buscador"
-        		/>
 				</Switch>
 		)
 	}

@@ -7,6 +7,7 @@ const initialProps = {
 	totalImages: null,
 	imagesPerPage: 20,
 	lastPage: null,
+	clear: false,
 
 }
 
@@ -22,6 +23,7 @@ export default function (state = initialProps, action) {
 		case "fetch_search_images_success":
 			return {
 				...state,
+				clear: false, 
 				isFetching: false,
 				images: action.payload,
 				page: action.page,
@@ -32,8 +34,22 @@ export default function (state = initialProps, action) {
 		case "fetch_search_images_failure":
 			return {
 				...state,
+				clear: false,
 				isFetching: false,
 				error: action.error
+			}
+		case "fetch_search_images_clear_success":
+			return {
+				isFetching: false,
+				images: null,
+				error: null,
+				page: null,
+				search: null,
+				totalImages: null,
+				imagesPerPage: 20,
+				lastPage: null,
+				clear: true
+				
 			}
 
 		default:

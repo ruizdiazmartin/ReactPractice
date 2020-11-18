@@ -23,6 +23,12 @@ const fetchSearchImagesFailure = error => {
 	}
 }
 
+const fetchSearchImagesClearSuccess = () => {
+	return {
+		type: "fetch_search_images_clear_success",
+	}
+}
+
 export const fetchSearchImages = (value, page) => {
 
 	return async dispatch => {
@@ -39,5 +45,11 @@ export const fetchSearchImages = (value, page) => {
 		} catch (error) {
 			dispatch(fetchSearchImagesFailure(error));
 		}
+	}
+}
+
+export const fetchSearchImagesClear = () => {
+	return dispatch => {
+		dispatch(fetchSearchImagesClearSuccess());
 	}
 }
