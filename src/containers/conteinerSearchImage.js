@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchSearchImages } from '../actions/searchImageAction';
+import { fetchSearchImages, fetchSearchImagesClear } from '../actions/searchImageAction';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Searcher from '../components/Searcher';
@@ -22,8 +22,12 @@ class conteinerSearchImage extends React.Component {
 	}
 
 
-	searchData = (busqueda) => {
+	handleSearchData = (busqueda) => {
 		this.props.fetchSearchImages(busqueda, 1);
+	}
+
+	handleSearchImagesClear = () => {
+		this.props.fetchSearchImagesClear();
 	}
 
 
@@ -33,8 +37,9 @@ class conteinerSearchImage extends React.Component {
 				<div className="jumbotron">
 					<p className="lead text-center">Search of Images</p>
 					<Searcher
-						searchData={this.searchData}
-					/>
+						search={this.props.imagesReducers.search}
+						searchData={this.handleSearchData}
+						clearSearch={this.handleSearchImagesClear}					/>
 				</div>
 				<div className="text-center">
 					{this.props.imagesReducers.isFetching ?
@@ -42,6 +47,9 @@ class conteinerSearchImage extends React.Component {
 						:
 						this.props.imagesReducers.totalImages === 0 ?
 							"NO HAY RESULTADOS PARA ESTA BUSQUEDA, INTENTE CON OTRA"
+							:
+							this.props.imagesReducers.clear ?
+							"USTED ELIMINO LA BUSQUEDA, PUEDE GERAR OTRA!!!"
 							:
 							<Result
 								imagesReducers={this.props.imagesReducers}
@@ -65,6 +73,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 	return {
 		fetchSearchImages: bindActionCreators(fetchSearchImages, dispatch),
+		fetchSearchImagesClear:  bindActionCreators(fetchSearchImagesClear, dispatch),
 	}
 }
 
