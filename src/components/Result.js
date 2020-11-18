@@ -1,9 +1,9 @@
 import React from 'react';
-import Imagen from './Imagen';
-import Paginacion from './Paginacion'
+import Images from './Images';
+import Pagination from './Pagination'
 
 
-export default function Resultado({ imagesReducers, pagePreviu, pageNext }) {
+export default function Result({ imagesReducers, pagePreviu, pageNext }) {
 
 	if (imagesReducers.images === null) return null;
 
@@ -11,13 +11,13 @@ export default function Resultado({ imagesReducers, pagePreviu, pageNext }) {
 		<div>
 			<div className="col-12 p-5 row">
 				{imagesReducers.images.map(image => (
-					<Imagen
+					<Images
 						key={image.id}
 						image={image}
 					/>
 				))}
 			</div>
-			<Paginacion
+			<Pagination
 				page={imagesReducers.page}
 				pagePreviu={pagePreviu}
 				pageNext={pageNext}

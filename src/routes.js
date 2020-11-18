@@ -1,21 +1,25 @@
 
 import React from 'react'
 import { createBrowserHistory } from "history";
-import ContenedorBuscador from './contenedores/contenedorBuscadorImagen'
-import { Redirect, Route, RouteComponentProps, Switch, withRouter } from 'react-router-dom';
+import ContenedorBuscador from './containers/conteinerSearchImage'
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 
 class Routes extends React.Component {
     constructor(props) {
-        super(props);
+		super(props);
       }
 	render() {
-        const hist = createBrowserHistory();
 		return (
 				<Switch>
 				<Route
-					path="/hola"
+					pathname="/buscador"
 					component={ContenedorBuscador}
 					/>
+				<Redirect
+					exact
+					from="/"
+					to="/buscador"
+        		/>
 				</Switch>
 		)
 	}

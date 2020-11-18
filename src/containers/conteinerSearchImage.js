@@ -1,12 +1,12 @@
 import React from 'react';
-import { fetchSearchImages } from '../actions/buscadorImagenAction';
+import { fetchSearchImages } from '../actions/searchImageAction';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Buscador from '../componentes/Buscador';
-import Resultado from '../componentes/Resultado';
+import Searcher from '../components/Searcher';
+import Result from '../components/Result';
 
 
-class contenedorBuscadorImagen extends React.Component {
+class conteinerSearchImage extends React.Component {
 
 	scroll = () => {
 		const element = document.querySelector('.jumbotron')
@@ -32,20 +32,18 @@ class contenedorBuscadorImagen extends React.Component {
 			<div className="container">
 				<div className="jumbotron">
 					<p className="lead text-center">Search of Images</p>
-					<Buscador
+					<Searcher
 						searchData={this.searchData}
 					/>
 				</div>
 				<div className="text-center">
 					{this.props.imagesReducers.isFetching ?
-						<div class="spinner-border" role="status">
-							<span class="sr-only">Loading...</span>
-						</div>
+						<div class="spinner-border"></div>
 						:
 						this.props.imagesReducers.totalImages === 0 ?
 							"NO HAY RESULTADOS PARA ESTA BUSQUEDA, INTENTE CON OTRA"
 							:
-							<Resultado
+							<Result
 								imagesReducers={this.props.imagesReducers}
 								pagePreviu={this.pagePreviu}
 								pageNext={this.pageNext}
@@ -70,7 +68,7 @@ function mapDispatchToProps(dispatch) {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(contenedorBuscadorImagen)
+export default connect(mapStateToProps, mapDispatchToProps)(conteinerSearchImage)
 
 
 
