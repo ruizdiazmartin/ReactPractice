@@ -10,18 +10,16 @@ class Searcher extends Component {
 	}
 
 	onChange = (event) => {
-		debugger
-		this.setState({search: event.target.value});
-	  }
+		this.setState({ search: event.target.value });
+	}
 
 	getData = (event) => {
 		event.preventDefault();
-		debugger
 		this.props.searchData(this.state.search);
 	}
 
 	clearSearch = () => {
-		this.setState({search: ''});
+		this.setState({ search: '' });
 		this.props.clearSearch()
 	}
 
@@ -29,17 +27,16 @@ class Searcher extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<form onSubmit={this.getData}>
-					<div className="row">
-						<div className="form-group col-md-8">
+				<tr className="form-group col-md-8">
+					<td className="form-group col-md-8">
+						<form onSubmit={this.getData}>
 							<input value={this.state.search} onChange={this.onChange} type="text" className="form-control form-control-lg" placeholder="Search your image. Example: Futbol" />
-						</div>
-						{/* <div className="form-group col-md-4" >
-							<input type="submit" className="btn btn-lg btn-danger btn-block" value="Search..." />
-						</div> */}
-					</div>
-				</form>
-				<input type="submit" onClick={this.clearSearch} className="btn btn-lg btn-danger btn-block" value="Eliminar Busqueda" />
+						</form>
+					</td>
+					<td>
+						<button type="submit" onClick={this.clearSearch} className="btn btn-primary btn-sm">X</button>
+					</td>
+				</tr>
 			</React.Fragment>
 		)
 	}
