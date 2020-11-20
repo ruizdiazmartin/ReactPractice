@@ -27,10 +27,10 @@ class Searcher extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<tr className="form-group col-md-8">
+				<tr>
 					<td className="form-group col-md-8">
 						<form onSubmit={this.getData}>
-							<input value={this.state.search} onChange={this.onChange} type="text" className="form-control form-control-lg" placeholder="Search your image. Example: Futbol" />
+							<input minLength="3" value={this.state.search} onChange={this.onChange} type="text" className="form-control form-control-lg" placeholder="Search your image. Example: Futbol" />
 						</form>
 					</td>
 					<td>
