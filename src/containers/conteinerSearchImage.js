@@ -39,23 +39,23 @@ class conteinerSearchImage extends React.Component {
 					<Searcher
 						search={this.props.imagesReducers.search}
 						searchData={this.handleSearchData}
-						clearSearch={this.handleSearchImagesClear}					/>
+						clearSearch={this.handleSearchImagesClear} />
 				</div>
 				<div className="text-center">
 					{this.props.imagesReducers.isFetching ?
-						<div class="spinner-border"></div>
+						<div className="spinner-border"></div>
 						:
 						this.props.imagesReducers.totalImages === 0 ?
 							"NO HAY RESULTADOS PARA ESTA BUSQUEDA, INTENTE CON OTRA"
 							:
 							this.props.imagesReducers.clear ?
-							"USTED ELIMINO LA BUSQUEDA, PUEDE GERAR OTRA!!!"
-							:
-							<Result
-								imagesReducers={this.props.imagesReducers}
-								pagePreviu={this.pagePreviu}
-								pageNext={this.pageNext}
-							/>
+								"USTED ELIMINO LA BUSQUEDA, PUEDE GERAR OTRA!!!"
+								:
+								<Result
+									imagesReducers={this.props.imagesReducers}
+									pagePreviu={this.pagePreviu}
+									pageNext={this.pageNext}
+								/>
 					}
 				</div>
 			</div>
@@ -73,7 +73,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 	return {
 		fetchSearchImages: bindActionCreators(fetchSearchImages, dispatch),
-		fetchSearchImagesClear:  bindActionCreators(fetchSearchImagesClear, dispatch),
+		fetchSearchImagesClear: bindActionCreators(fetchSearchImagesClear, dispatch),
 	}
 }
 

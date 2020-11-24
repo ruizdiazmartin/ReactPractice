@@ -21,9 +21,9 @@ Siempre que sean 20 por pagina, eso no es modificable.
 
 -11/18/2020
 
--Cambiar el boton de eliminar, a un boton con un icono de X, y a la derecha del buscador.
+-Cambiar el boton de eliminar, a un boton con un icono de X, y a la derecha del buscador. (ok )
 
 -Si tipeo menos de 3 caracteres, aprieto enter, no efectuar la busqueda, mostrar un mensaje que diga que debe tipear 3 o mas caracteres, 
-Este mensaje debe estar dentro del modulo de busqueda.
+Este mensaje debe estar dentro del modulo de busqueda. (Ok) 
 
--Mostrarme la cantidad de paginas que tiene mi busqueda en el paginado, y decirme en que pagina estoy parado.
+-Mostrarme la cantidad de paginas que tiene mi busqueda en el paginado, y decirme en que pagina estoy parado. (OK)
