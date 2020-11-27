@@ -30,7 +30,7 @@ class Searcher extends Component {
 				<tr>
 					<td className="form-group col-md-8">
 						<form onSubmit={this.getData}>
-							<input minLength="3" value={this.state.search} onChange={this.onChange} type="text" className="form-control form-control-lg" placeholder="Search your image. Example: Futbol" />
+							<input minLength="3" pattern="[a-z]{1,15}" value={this.state.search} onChange={this.onChange} type="text" className="form-control form-control-lg" placeholder="Search your image. Example: Futbol" required />
 						</form>
 					</td>
 					<td>
